@@ -8,13 +8,10 @@
 
 import React, {useState} from 'react';
 import type {Node} from 'react';
+// import {BlurView} from '@react-native-community/blur';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
   Image,
   TextInput,
@@ -53,7 +50,8 @@ const App: () => Node = () => {
             source={require('../img/drawable-xxxhdpi/iconemail.png')}
           />
           <TextInput
-            style={{color: '#002558'}}
+            style={{color: 'black'}}
+            placeholderTextColor={'grey'}
             placeholder="Alamat Email"
             onChangeText={onChangeText}
           />
@@ -64,8 +62,10 @@ const App: () => Node = () => {
             source={require('../img/drawable-xxxhdpi/iconpassowrd.png')}
           />
           <TextInput
-            style={{color: '#002558'}}
+            style={{color: 'black'}}
+            placeholderTextColor={'grey'}
             placeholder="Password"
+            secureTextEntry={true}
             onChangeText={onChangeText}
           />
         </View>
@@ -81,19 +81,19 @@ const App: () => Node = () => {
           }}>
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={styles.modalText}>Hello World!</Text>
-              <Pressable
+              <Text style={styles.areaText}>Pilih Area</Text>
+              <TouchableOpacity
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={styles.textStyle}>Hide Modal</Text>
-              </Pressable>
+                <Text style={styles.textStyle}>LANJUTKAN</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </Modal>
         <TouchableOpacity
           style={styles.buttonlogin}
           onPress={() => setModalVisible(true)}>
-          <Text style={styles.fontlogin}>LOGIN 123</Text>
+          <Text style={styles.fontlogin}>LOGIN</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -106,9 +106,9 @@ const styles = StyleSheet.create({
     height: 381,
     color: 'red',
     backgroundColor: 'white',
-    borderRadius: 15,
+    borderRadius: 10,
     alignSelf: 'center',
-    marginVertical: 200,
+    marginVertical: 199,
   },
   buttonlogin: {
     marginTop: 24,
@@ -194,45 +194,48 @@ const styles = StyleSheet.create({
     margin: 16,
   },
   centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
+    alignSelf: 'center',
+    marginTop: 258,
   },
   modalView: {
     margin: 20,
     backgroundColor: 'white',
     borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
+    // alignItems: 'center',
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
+    height: 245,
+    width: 320,
+    shadowOpacity: 0.95,
     shadowRadius: 4,
     elevation: 5,
   },
   button: {
-    borderRadius: 20,
-    padding: 10,
+    borderRadius: 5,
     elevation: 2,
+    width: 288,
+    height: 48,
+    alignSelf: 'center',
+    color: 'black',
   },
   buttonOpen: {
-    backgroundColor: '#F194FF',
+    backgroundColor: 'black',
   },
   buttonClose: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#287AE5',
   },
   textStyle: {
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
+    fontSize: 16,
+    marginTop: 13,
   },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+  areaText: {
+    fontSize: 16,
+    marginTop: 16,
+    marginLeft: 16,
+    color: '#002558',
+    fontWeight: 'bold',
   },
 });
 
