@@ -53,7 +53,7 @@ const App: () => Node = () => {
 
 const styles = StyleSheet.create({
   loadingStyle: {
-    backgroundColor: 'rgba(0,0,0,0.7)',
+    backgroundColor: 'rgba(0,0,0,0.4)',
     height: 810,
     alignItems: 'center',
     justifyContent: 'center',
@@ -103,16 +103,12 @@ const styles = StyleSheet.create({
     marginTop: 258,
   },
   modalView: {
-    margin: 20,
     backgroundColor: 'white',
     borderRadius: 20,
     // alignItems: 'center',
     shadowColor: '#000',
     height: 245,
     width: 320,
-    shadowOpacity: 0.95,
-    shadowRadius: 4,
-    elevation: 5,
   },
   button: {
     borderRadius: 5,
@@ -121,6 +117,7 @@ const styles = StyleSheet.create({
     height: 48,
     alignSelf: 'center',
     color: 'black',
+    justifyContent: 'center',
   },
   buttonOpen: {
     backgroundColor: 'black',

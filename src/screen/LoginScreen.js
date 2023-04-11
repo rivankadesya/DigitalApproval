@@ -8,6 +8,7 @@
 
 import React, {useState} from 'react';
 import type {Node} from 'react';
+
 // import {BlurView} from '@react-native-community/blur';
 import {
   StyleSheet,
@@ -75,6 +76,7 @@ const App: () => Node = () => {
           animationType="slide"
           transparent={true}
           visible={modalVisible}
+          style={{}}
           onRequestClose={() => {
             Alert.alert('Modal has been closed.');
             setModalVisible(!modalVisible);
@@ -194,8 +196,10 @@ const styles = StyleSheet.create({
     margin: 16,
   },
   centeredView: {
-    alignSelf: 'center',
-    marginTop: 258,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   modalView: {
     margin: 20,
