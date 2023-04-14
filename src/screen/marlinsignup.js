@@ -22,30 +22,51 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-const App: () => Node = () => {
+import SigninMarlin from './marlinsignin';
+import {ScrollView} from 'react-native-gesture-handler';
+import Geolocation from '@react-native-community/geolocation';
+
+const SignupMarlin = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.container}>
-      <Image
-        source={require('../img/marlin/logo.png')}
-        style={styles.logo}></Image>
-      <Text style={styles.textcreate}>Create an account</Text>
-      <TextInput style={styles.textinput} placeholder="Name"></TextInput>
-      <TextInput style={styles.textinput} placeholder="Email"></TextInput>
-      <TextInput style={styles.textinput} placeholder="Phone"></TextInput>
-      <TextInput style={styles.textinput} placeholder="Password"></TextInput>
-      <TouchableOpacity
-        style={styles.buttoncreate}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textbutton}>Sign up</Text>
-      </TouchableOpacity>
+      <ScrollView>
+        <Image
+          source={require('../img/marlin/logo.png')}
+          style={styles.logo}></Image>
+        <Text style={styles.textcreate}>Create an account</Text>
+        <TextInput style={styles.textinput} placeholder="Name"></TextInput>
+        <TextInput style={styles.textinput} placeholder="Email"></TextInput>
+        <TextInput style={styles.textinput} placeholder="Phone"></TextInput>
+        <TextInput style={styles.textinput} placeholder="Password"></TextInput>
+        <TouchableOpacity
+          style={styles.buttoncreate}
+          onPress={
+            (() => setModalVisible(true), () => navigation.navigate('Signin'))
+          }>
+          <Text style={styles.textbutton}>Sign up</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttoncreate}
+          onPress={() => {
+            Geolocation.setRNConfiguration();
+            Geolocation.getCurrentPosition(info => console.log(info));
+          }}>
+          <Text style={styles.textbutton}>GEO</Text>
+        </TouchableOpacity>
+      </ScrollView>
       <View style={styles.footer}>
-        <View style={{alignSelf: 'center', marginTop: 10}}>
+        <View style={{alignSelf: 'center'}}>
           <View style={{flexDirection: 'row'}}>
             <Text style={styles.footertext}>Already have account? </Text>
-            <Text style={[styles.footertext, {fontWeight: 'bold'}]}>
-              Log in
-            </Text>
+            <TouchableOpacity
+              style={{justifyContent: 'center'}}
+              onPress={() => navigation.navigate('Signin')}>
+              <Text style={[styles.footertext, {fontWeight: 'bold'}]}>
+                Log in
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -53,4 +74,4 @@ const App: () => Node = () => {
   );
 };
 
-export default App;
+export default SignupMarlin;

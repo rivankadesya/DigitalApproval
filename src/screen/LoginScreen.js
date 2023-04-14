@@ -31,7 +31,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => Node = () => {
+const LoginScreen: () => Node = () => {
   const [text, onChangeText] = React.useState('Useless Text');
   const [isSelected, setSelection] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -243,4 +243,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default LoginScreen;

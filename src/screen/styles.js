@@ -2,7 +2,12 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E5E5E5',
+    backgroundColor: '#F4F4F4',
+  },
+  tittle: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    margin: 10,
   },
   logo: {
     height: 45,
@@ -104,6 +109,66 @@ const styles = StyleSheet.create({
     fontSize: 14,
     alignSelf: 'center',
     color: '#5B5B5B',
+  },
+  iconhomepage: {
+    width: 72,
+    height: 72,
+    marginHorizontal: 8,
+  },
+  banner: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 10,
+    width: 339,
+    height: 137,
+    shadowColor: '#7373746E',
+    alignSelf: 'center',
+    marginTop: -85,
+    borderColor: 'white',
+    shadowRadius: 22,
+    elevation: 55,
+    shadowOffset: {
+      height: 1,
+      width: 1,
+    },
+  },
+  martinpoint: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#F4F4F4',
+    borderRadius: 25,
+    marginTop: -26,
+  },
+
+  container1: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    paddingBottom: 40,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 7,
+  },
+  image: {
+    height: 300,
+  },
+  header: {
+    color: '#222',
+    fontSize: 28,
+    fontWeight: 'bold',
+    paddingLeft: 20,
+    paddingTop: 20,
+  },
+  body: {
+    color: '#222',
+    fontSize: 18,
+    paddingLeft: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
 });
 

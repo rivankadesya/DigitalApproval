@@ -23,7 +23,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-const App: () => Node = () => {
+const SigninMarlin = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -39,8 +39,15 @@ const App: () => Node = () => {
             source={require('../img/marlin/eye.png')}
             style={styles.eyespassword}></Image>
         </View>
-
-        <TouchableOpacity style={styles.buttoncreate}>
+        {/* 
+        <TouchableOpacity
+          style={styles.buttoncreate}
+          onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.textbutton}>Sign in</Text>
+        </TouchableOpacity> */}
+        <TouchableOpacity
+          style={styles.buttoncreate}
+          onPress={() => navigation.navigate('bottom')}>
           <Text style={styles.textbutton}>Sign in</Text>
         </TouchableOpacity>
 
@@ -67,10 +74,14 @@ const App: () => Node = () => {
       </ScrollView>
       <View style={styles.footer}>
         <Text style={styles.footertext}>Don't have account? </Text>
-        <Text style={[styles.footertext, {fontWeight: 'bold'}]}>Sign Up</Text>
+        <TouchableOpacity
+          style={{justifyContent: 'center'}}
+          onPress={() => navigation.pop()}>
+          <Text style={[styles.footertext, {fontWeight: 'bold'}]}>Sign Up</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default App;
+export default SigninMarlin;
